@@ -30,26 +30,26 @@ The project follows a layered architecture:
 
 AnnaSweetBakery.API - Backend Part of the project
 
-├── Controllers                     → API endpoints (Account, Orders, Products, Admin)
-├── Repositories                    → Data access layer (interfaces + EF Core implementation)
-├── Models                          → Entities and DTOs
-├── Data                            → DbContext and configuration
-├── Services                        → Business logic layer
-└── Program.cs                      → Dependency Injection & middleware setup
+Controllers:                     → API endpoints (Account, Orders, Products, Admin).
+Repositories:                    → Data access layer (interfaces + EF Core implementation).
+Models:                          → Entities and DTOs.
+Data:                            → DbContext and configuration.
+Services:                        → Business logic layer.
+Program.cs:                      → Dependency Injection & middleware setup.
 
 FinalProject - Frontend Part of the project
 
-├── Controllers        
-├── Repositories       
-├── Models            
-├── Data            
-├── Services          
-└── Program.cs        
+Controllers,        
+Repositories,       
+Models,            
+Data,            
+Services,          
+Program.cs        
 
 
 Testing Project
 AnnaSweetBakery.Tests
-├── Controllers        → Unit tests for controllers 
+Controllers        → Unit tests for controllers 
 
 Authentication & Authorization
 
@@ -73,44 +73,48 @@ Example:
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 
 Unit Testing
+
 Framework: xUnit
 Mocking: Moq
 Scope: Controllers only
 What is tested:
-HTTP responses (Ok, BadRequest, NotFound)
-Input validation
-Authentication-related endpoints
-Controller behavior in isolation
+
+HTTP responses (Ok, BadRequest, NotFound),
+Input validation,
+Authentication-related endpoints,
+Controller behavior in isolation.
+
 Core Features
 
-User registration and login
-JWT-based authentication
-Role-based authorization
-Product browsing and management
-Order creation and tracking
-Admin management panel (API level)
+User registration and login,
+JWT-based authentication,
+Role-based authorization,
+Product browsing and management,
+Order creation and tracking,
+Admin management panel (API level).
 
 Future Improvements
 
-Payment gateway integration (Stripe/PayPal)
-Real-time order tracking (SignalR)
-Frontend UI (React / Angular / Blazor)
-CI/CD pipeline (GitHub Actions / Azure DevOps)
-Expanded unit testing (services + repositories)
+Payment gateway integration (Stripe/PayPal),
+Real-time order tracking (SignalR),
+Frontend UI (React / Angular / Blazor),
+CI/CD pipeline (GitHub Actions / Azure DevOps),
+Expanded unit testing (services + repositories).
 
 Limitations
-No payment system currently implemented
-No real-time updates
-Testing limited to controller layer only
-No deployed production version
+No payment system currently implemented,
+No real-time updates,
+Testing limited to controller layer only,
+No deployed production version.
 
 1. Clone the repository
 git clone https://github.com/ht30829-rgb/SOA_final_project.git
 
-
-3. Run migrations
+2. Run migrations
 dotnet ef database update
-4. Run the project
-dotnet run
+
+3. Run the project
+dotnet run (in two separate frontend and backend terminals).
+dotnet test (for running the tests).
 
 Developed by: Ema Gjeroska & Hristina Trpeska
