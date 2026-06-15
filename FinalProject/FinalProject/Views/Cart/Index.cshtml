@@ -1,0 +1,37 @@
+﻿@*  renders the favorites view that displayes when you click Go to Favorites *@
+@model IEnumerable<FinalProject.Models.Cart>
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="border-bottom">
+                <h4 class="text-pink">Your Favorites</h4>
+                <p class="text-muted fst-italic">@Model.Count() recipes in favorites</p>
+            </div>
+            <div>
+                @foreach(var cart in Model)
+                {
+                    <div class="border-bottom d-flex flex-wrap p-2 ">
+                        <img src="@cart.Image_url" class="cartImage"/>
+                        <a href="/Recipe/Order?id=@cart.RecipeId" 
+                        class="text-decoration-none text-pink fw-bold fst-italic px-2 cartTitle ">@cart.Title</a>
+                        <span onclick="removeCartfromList('@cart.RecipeId')" 
+                        class=" text-mint fw-bold p-2 removeCartBTN">Remove</span>
+                    </div>
+                }
+                @if (Model.Count() == 0)
+                {
+                    <div class="text-center ">
+                        <i class="fa-solid fa-heart-circle-exclamation text-pink emptyCart"></i>
+                        <p class="fw-bold fs-4 text-mint">Your favorites list is empty!</p>
+                    </div>
+                }
+            </div>
+        </div>
+       
+    </div>
+</div>
+

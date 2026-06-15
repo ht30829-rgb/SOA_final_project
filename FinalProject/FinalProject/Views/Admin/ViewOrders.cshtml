@@ -1,0 +1,61 @@
+﻿@model PaginatedList<FinalProject.Models.Order>
+
+@{
+    ViewData["Title"] = "View Orders";
+}
+
+<h2>All Orders</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Recipe Name</th>
+            <th>User</th>
+            <th>Address</th>
+            <th>Price (per unit)</th>
+            <th>Quantity</th>
+            <th>Total Amount</th>
+            <th>Order Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.RecipeName</td>
+                    <td>@order.User?.Email</td> <!-- Display the user's email -->
+                    <td>@order.Address</td>
+                    <td>@order.Price.ToString("C")</td> <!-- Format as currency -->
+                    <td>@order.Quantity</td>
+                    <td>@order.TotalAmount.ToString("C")</td> <!-- Format as currency -->
+                    <td>@order.OrderDate.ToString("yyyy-MM-dd HH:mm")</td> <!-- Format the date -->
+                </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Pagination Controls -->
+<div>
+    <ul class="pagination">
+        @if (Model.HasPreviousPage)
+        {
+                <li class="page-item">
+                    <a class="page-link" asp-action="ViewOrders" asp-route-pageIndex="@(Model.PageIndex - 1)">Previous</a>
+                </li>
+        }
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+                <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                    <a class="page-link" asp-action="ViewOrders" asp-route-pageIndex="@i">@i</a>
+                </li>
+        }
+        @if (Model.HasNextPage)
+        {
+                <li class="page-item">
+                    <a class="page-link" asp-action="ViewOrders" asp-route-pageIndex="@(Model.PageIndex + 1)">Next</a>
+                </li>
+        }
+    </ul>
+</div>

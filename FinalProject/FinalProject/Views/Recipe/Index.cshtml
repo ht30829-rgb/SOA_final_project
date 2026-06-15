@@ -1,0 +1,82 @@
+﻿@*Renders the Menu&Recipes Page*@
+@{
+    ViewData["Title"] = "Recipe";
+}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            @Html.Partial("_SearchBar")
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-2">
+            <div class="shadow rounded  position-sticky" id=" recipe-list">
+                <div class="border-bottom border-3 p-2">
+                    <h4 class="text-pink text-center fst-italic">Recipes</h4>
+                    @Html.Partial("_SideMenu")
+                </div>
+            </div>
+        </div>
+        <div class="col-10">
+            <div class="mb-3">
+                <h4 class="text-dark">Donuts</h4>
+                <div class="row" id="donutsRecipe"></div>
+            </div>
+            <div class="mb-3">
+                <h4 class="text-dark">Cake</h4>
+                <div class="row" id="cakeRecipe"></div>
+            </div>
+            <div class="mb-3">
+                <h4 class="text-dark">Croissant</h4>
+                <div class="row" id="croissantRecipe"></div>
+            </div>
+            <div class="mb-3">
+                <h4 class="text-dark">Pie</h4>
+                <div class="row" id="pieRecipe"></div>
+            </div>
+        </div>
+    </div>
+    @* order confirmation message container to display a success message*@
+    <div id="orderConfirmationMessageContainer" class="order-confirmation-message-container">
+        @if (!string.IsNullOrEmpty(ViewBag.OrderConfirmationMessage))
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.OrderConfirmationMessage
+            </div>
+        }
+    </div>
+</div>
+
+@*The view includes references to the jQuery library,
+    lling the web browser to load jQuery so that you can use its features in your client-side scripts.
+*@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+    @*handles the order confirmation message*@
+    $(document).ready(function () {
+        
+        var orderConfirmationMessage = '@ViewBag.OrderConfirmationMessage';
+        if (orderConfirmationMessage) {
+            
+            $("#orderConfirmationMessageContainer").fadeIn();
+
+            
+            setTimeout(function () {
+                $("#orderConfirmationMessageContainer").fadeOut();
+            }, 3000);
+        }
+    });
+   
+    @* calls the GetRecipes function for 4 different recipes*@
+    $(document).ready(function () {
+        GetRecipes("donuts", "donutsRecipe", false);
+        GetRecipes("cake", "cakeRecipe", false);
+        GetRecipes("croissant", "croissantRecipe", false);
+        GetRecipes("pie", "pieRecipe", false);
+    });
+
+
+
+
+
+</script>

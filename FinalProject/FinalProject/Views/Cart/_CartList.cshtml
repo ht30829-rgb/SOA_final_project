@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FinalProject.Models.Cart>
+@*  renders the favorites part that appears when you click the heart icon in header *@
+@foreach(var cart in Model){
+    <div class="border-bottom p-2 d-flex">
+        <img src="@cart.Image_url" class="cartListImg"/>
+        <a class="fw-normal text-pink text-decoration-none px-2" 
+        href="/Recipe/Order?id=@cart.RecipeId">@(cart.Title?.Length >= 15 ? cart.Title.Substring(0,14)+"..." :cart.Title)</a>
+
+    </div>
+}
+<div class="text-center bg-mint p-1">
+    <a href="/Cart" class=" text-white fs-5 text-decoration-none">Go To Favorites</a>
+</div>

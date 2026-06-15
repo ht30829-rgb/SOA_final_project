@@ -1,0 +1,74 @@
+﻿@*  renders the home page *@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row shadow rounded">
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div id="carouselExampleSlidesOnly" class="carousel slide " data-bs-ride="carousel">
+                <div class="carousel-inner h-100">
+                    <div class="carousel-item active">
+                        <img src="/photos/carouselPhotos/donuts2.jpg" class="d-block w-100 h-100" alt="Recepies">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./photos/carouselPhotos/donuts1.jpg" class="d-block w-100 h-100" alt="Recepies">
+                    </div>
+                    <div class="carousel-item h-100">
+                        <img src="./photos/carouselPhotos/donuts3.jpg" class="d-block w-100 h-100" alt="Recepies">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="mb-3" >
+                <h2>Try <span class="colored-text">Anna's </span>  most delicious  <span class="colored-text">sweets. </span></h2>
+            </div>
+            <div class="mb-1 p-3">
+                <span><i class="fa-solid fa-cookie-bite colored-text mx-2 fs-4"></i></span>
+                <span class="fs-5 text-dark fst-italic">Freshly baked goodies</span>
+            </div>
+            <div class="mb-1 p-3">
+                <span><i class="fa-solid fa-utensils colored-text mx-2 fs-4"></i></span>
+                <span class="fs-5 text-dark fst-italic">Wholesome and delightful treats</span>
+            </div>
+            <div class="mb-1 p-3">
+                <span><i class="fa-solid fa-truck colored-text mx-2 fs-4"></i></span>
+                <span class="fs-5 text-dark fst-italic">Prompt and sweet delivery service</span>
+                <p class="py-2"> Swift and timely delivery, guaranteed.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="mb-3">
+            <h2 class="text-dark fst-italic">Our Customer's Favorites</h2>
+            <div id="customerFavorite" class="row">
+                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <div class="shadow rounded card sweetsCard">
+                        <img class="card-img-top h-75" src="./photos/favoritePhotos/fav1.jpeg" alt="sweets" />
+                        <div class="card-body">
+                            <a href="/Recipe/Order?id=664c8f193e7aa067e94e826b" style="color:black;" class="card-title fw-bold">Carrot Cake</a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                    <div class="shadow rounded card sweetsCard">
+                        <img class="card-img-top h-75" src="./photos/favoritePhotos/fav3.jpg" alt="sweets" />
+                            <div class="card-body">
+                            <a href="/Recipe/Order?id=664c8f193e7aa067e94e8834" style="color:black;" class="card-title fw-bold">Blueberry Muffin</a>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        <div class="shadow rounded card sweetsCard">
+                            <img class="card-img-top h-75" src="./photos/favoritePhotos/fav2.jpeg" alt="sweets" />
+                            <div class="card-body">
+                            <a href="/Recipe/Order?id=664c8f193e7aa067e94e88fa" style="color:black;" class="card-title fw-bold">Dark Chocolate Donut</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

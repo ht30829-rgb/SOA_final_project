@@ -1,0 +1,52 @@
+﻿@*  renders the search bar appearing on top of our Menu & Recipe Page *@
+
+<div class="shadow rounded">
+    <div class="p-2">
+        <form autocomplete="off" class="d-flex align-items-center" action="/Recipe/Search" method="get">
+            <div class="flex-grow-1 text-center ui-widget p-1">
+                <input type="text" id="tags" placeholder="Search Recipe" class="form-control" name="recipe" />
+            </div>
+            <div class="p-3">
+                <button type="submit" class="btn btn-sm btn-mint p-2">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@* The view includes references to the jQuery library (jquery.min.js) located in the ~/lib folder.
+    lling the web browser to load jQuery so that you can use its features in your client-side scripts. 
+
+There is a script block that uses jQuery to enable autocomplete functionality for the input field with the id "tags".
+An array of available tags is provided, and the autocomplete function is applied to the input field. *@
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script>
+    $(function () {
+        var availableTags = [
+            "donuts",
+            "croissant",
+            "pudding",
+            "pie",
+            "cake",
+            "chocolate",
+            "ice cream",
+            "apple",
+            "banana",
+            "blackberry",
+            "blueberry",
+            "cherry",
+            "peach",
+            "pear",
+            "raspberry",
+            "strawberry",
+
+        ];
+
+
+        $("#tags").autocomplete({
+            source: availableTags,
+            minLenght:2
+        });
+    });
+</script>
