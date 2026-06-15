@@ -14,7 +14,7 @@ Lack of centralized product browsing system
 Manual and error-prone order management
 No structured user accounts or personalization
 Missing secure authentication and authorization
-⚙️ Technologies Used
+ Technologies Used
 ASP.NET Core Web API
 Entity Framework Core
 SQL Server
@@ -29,7 +29,7 @@ Project Architecture
 The project follows a layered architecture:
 
 AnnaSweetBakery.API
-│
+
 ├── Controllers        → API endpoints (Account, Orders, Products, Admin)
 ├── Repositories       → Data access layer (interfaces + EF Core implementation)
 ├── Models             → Entities and DTOs
@@ -38,7 +38,7 @@ AnnaSweetBakery.API
 └── Program.cs         → Dependency Injection & middleware setup
 
 FinalProject
-│
+
 ├── Controllers        
 ├── Repositories       
 ├── Models            = Frontend Part of the project
@@ -71,7 +71,8 @@ Injected using ASP.NET Core Dependency Injection
 Example:
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-🧪 Unit Testing
+
+Unit Testing
 Framework: xUnit
 Mocking: Moq
 Scope: Controllers only
@@ -80,7 +81,8 @@ HTTP responses (Ok, BadRequest, NotFound)
 Input validation
 Authentication-related endpoints
 Controller behavior in isolation
-📦 Core Features
+Core Features
+
 User registration and login
 JWT-based authentication
 Role-based authorization
