@@ -28,20 +28,20 @@ Project Architecture
 
 The project follows a layered architecture:
 
-AnnaSweetBakery.API
+AnnaSweetBakery.API - Backend Part of the project
 
-├── Controllers        → API endpoints (Account, Orders, Products, Admin)
-├── Repositories       → Data access layer (interfaces + EF Core implementation)
-├── Models             → Entities and DTOs
-├── Data               → DbContext and configuration
-├── Services           → Business logic layer
-└── Program.cs         → Dependency Injection & middleware setup
+├── Controllers                     → API endpoints (Account, Orders, Products, Admin)
+├── Repositories                    → Data access layer (interfaces + EF Core implementation)
+├── Models                          → Entities and DTOs
+├── Data                            → DbContext and configuration
+├── Services                        → Business logic layer
+└── Program.cs                      → Dependency Injection & middleware setup
 
-FinalProject
+FinalProject - Frontend Part of the project
 
 ├── Controllers        
 ├── Repositories       
-├── Models            = Frontend Part of the project
+├── Models            
 ├── Data            
 ├── Services          
 └── Program.cs        
